@@ -1,0 +1,44 @@
+#include <iostream>
+#include <bitset>
+#include "portmask.h"
+
+using namespace std;
+
+int main() {
+    // unsigned short short1 = 4;
+    // bitset<16> bitset1{short1};   // the bitset representation of 4
+    // cout << bitset1 << endl;  // 0b00000000'00000100
+
+    // unsigned short short2 = short1 << 1;     // 4 left-shifted by 1 = 8
+    // bitset<16> bitset2{short2};
+    // cout << bitset2 << endl;  // 0b00000000'00001000
+
+    // unsigned short short3 = short1 << 2;     // 4 left-shifted by 2 = 16
+    // bitset<16> bitset3{short3};
+    // cout << bitset3 << endl;  // 0b00000000'00010000
+    
+    // unsigned int len = 2;
+    // unsigned long mask = (unsigned long)(((1ULL)<<len) - 1);
+    // cout << mask << endl;
+
+    // unsigned long val = 4;
+    // unsigned long value = val & mask;
+    // cout << value << endl;
+
+    // PortMask emptyL1Mask(18,0);
+    unsigned len = 18;
+    PortMask Mask1(18,1);
+    const PortMask Mask2(18, 0);
+    unsigned long mask = (unsigned long)(((1ULL)<<len));
+    cout << "mask:" << mask << endl;
+    cout << "value of Mask 1:" << (0 & mask) << endl;
+    cout << "value of Mask 2:" << (1 & mask) << endl;
+    cout << "nBits:" << Mask1.nBits() << endl;
+    // PortMask newMask;
+    // newMask = Mask;
+    // inline unsigned int nbits = newMask.nBits();
+    // cout << "nbits:" << nbits << endl;
+
+    // cout << "numBits:" << Mask.len() << endl;
+    // cout << "mask:" << Mask << endl;
+}
